@@ -8,11 +8,11 @@ export default function MenuToggle() {
   return (
     <button
       onClick={() => setOpen(!open)}
-      className="md:hidden flex flex-col gap-[5px] p-2"
+      className="hidden flex-col gap-[5px] p-2 mobile:flex tablet:hidden desktop:hidden"
       aria-label="Toggle menu"
     >
       <svg
-        className="w-6 h-6 text-zinc-800 dark:text-zinc-200"
+        className="h-6 w-6 text-black"
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"

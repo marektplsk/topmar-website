@@ -8,10 +8,12 @@ export default function PhoneOutgoingIcon({
   size = 16,
   ...props
 }: PhoneOutgoingIconProps) {
+  const finalSize = typeof size === "string" ? parseInt(size, 10) : size;
+
   return (
     <svg
-      width={size}
-      height={size}
+      width={finalSize}
+      height={finalSize}
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"

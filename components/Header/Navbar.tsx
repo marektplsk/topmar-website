@@ -1,24 +1,31 @@
 import PhoneOutgoingIcon from "@/components/icons/PhoneOutgoingIcon";
+
+const NAV_ITEMS = ["Naša vízia", "Spoznajte Appo®", "Jazyk", "Kontakt"] as const;
+const CALL_BUTTON = {
+  ariaLabel: "Call us",
+  iconSize: 18,
+};
+
 export default function Navbar() {
-  const navItems = ['Naša vízia', 'Spoznajte Appo®', 'Jazyk', 'Kontakt']
 
   return (
-    <nav className="hidden md:flex items-center gap-10">
-      <div className="flex items-center gap-6">
-        {navItems.map((item) => (
-          <div
+    <nav className="flex items-center gap-8 mobile:hidden">
+      <div className="flex items-center gap-8">
+        {NAV_ITEMS.map((item) => (
+          <span
             key={item}
-            className="px-2 py-1 text-zinc-700 dark:text-zinc-300 hover:text-black dark:hover:text-white transition-colors cursor-pointer"
+            className="text-[14px] font-medium text-black/80 transition-colors hover:text-black mobile:text-[24px]"
           >
             {item}
-          </div>
+          </span>
         ))}
       </div>
-      <div>
-        <button className="flex h-10 w-10 items-center justify-center rounded-[24px] border bg-[#006BD8] text-white transition hover:bg-[#0055b5]">
-          <PhoneOutgoingIcon size={16} />
-        </button>
-      </div>
+      <button
+        className="flex h-10 w-10 items-center justify-center rounded-full bg-blue text-black transition-colors hover:bg-blue/90"
+        aria-label={CALL_BUTTON.ariaLabel}
+      >
+        <PhoneOutgoingIcon size={CALL_BUTTON.iconSize} />
+      </button>
     </nav>
-  )
+  );
 }

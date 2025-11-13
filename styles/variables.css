@@ -1,0 +1,21 @@
+/* styles/variables.css */
+:root {
+  /* Colors */
+  --white: #FEFEFE;
+  --white-nav: #F5F5F7;
+  --black: #181818;
+  --blue: #006BD8;
+  --dark-dark-gray: #242226;
+  --red: #FF3F34;
+  --light-gray: #F5F5F7;
+  --green: #3ABF5B;
+  --space-gray: #48484A;
+  --secondary-tertiary: #919092;
+  --var: #383838;
+
+  /* Font sizes */
+  --nav-xs: 12px;
+  --nav-xs-line: 12px;
+  --nav-sm: 14px;
+  --nav-sm-line: 20px;
+}

@@ -1,25 +1,37 @@
-'use client'
+'use client';
 
-import { useState } from 'react'
+import Image from "next/image";
+import { X } from "lucide-react";
 
-export default function MenuToggle() {
-  const [open, setOpen] = useState(false)
+type MenuToggleProps = {
+  isOpen?: boolean;
+  onToggle?: () => void;
+};
 
+export default function MenuToggle({
+  isOpen = false,
+  onToggle = () => {},
+}: MenuToggleProps) {
   return (
     <button
-      onClick={() => setOpen(!open)}
-      className="hidden flex-col gap-[5px] p-2 mobile:flex tablet:hidden desktop:hidden"
-      aria-label="Toggle menu"
+      className="mobile:flex hidden items-center justify-center p-2"
+      aria-label={isOpen ? "Close menu" : "Open menu"}
+      aria-expanded={isOpen}
+      aria-controls="mobile-navigation"
+      type="button"
+      onClick={onToggle}
     >
-      <svg
-        className="h-6 w-6 text-black"
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={open ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16'} />
-      </svg>
+      {isOpen ? (
+        <X size={24} />
+      ) : (
+        <Image
+          src="/nav-hamburgerMenu-action-icon.svg"
+          alt="Navigation menu"
+          width={24}
+          height={24}
+          priority
+        />
+      )}
     </button>
-  )
+  );
 }

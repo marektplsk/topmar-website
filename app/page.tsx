@@ -1,5 +1,5 @@
 import HeroHeader from "@/components/Hero";
-import '@/styles/globals.css';
+import './globals.css';
 
 export default function Hero() {
   return (
